@@ -1,0 +1,60 @@
+{
+    "name": "Cauhoi",
+    "fields": [
+        {
+            "fieldName": "noidung",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "ketqua",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "dapan1",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dapan2",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dapan3",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dapan4",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "dokho",
+            "otherEntityRelationshipName": "cauhoi",
+            "relationshipName": "dokho",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "loai",
+            "otherEntityRelationshipName": "cauhoi",
+            "relationshipName": "loai",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20191030151323",
+    "entityTableName": "cauhoi",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

@@ -1,0 +1,16 @@
+version: '2'
+services:
+  thitructuyen-app:
+    image: thitructuyen
+    environment:
+      - _JAVA_OPTIONS=-Xmx512m -Xms256m
+      - SPRING_PROFILES_ACTIVE=prod,swagger
+      - MANAGEMENT_METRICS_EXPORT_PROMETHEUS_ENABLED=true
+      - SPRING_DATASOURCE_URL=jdbc:mysql://thitructuyen-mysql:3306/thitructuyen?useUnicode=true&characterEncoding=utf8&useSSL=false
+      - JHIPSTER_SLEEP=0 # gives time for other services to boot before the application
+    ports:
+      - 8080:8080
+  thitructuyen-mysql:
+    extends:
+      file: mysql.yml
+      service: thitructuyen-mysql

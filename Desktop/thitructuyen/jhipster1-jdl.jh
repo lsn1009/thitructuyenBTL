@@ -1,0 +1,23 @@
+entity Loai {
+	tenloai String required
+}
+entity Dokho {
+	dokho String required
+}
+entity Cauhoi {
+	noidung String required,
+    ketqua String required,
+    dapan1 String,
+    dapan2 String,
+    dapan3 String,
+    dapan4 String
+}
+entity Ketqua {
+    diemso Interger
+}
+relationship OneToMany {
+	Dokho{cauhoi} to Cauhoi{dokho},
+    Loai{cauhoi} to Cauhoi{loai},
+	User{ketqua} to Ketqua{User}
+}
+

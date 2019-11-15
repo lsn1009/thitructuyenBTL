@@ -1,0 +1,80 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-cauhoi-heading">Câu Hỏi</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_noidung">Nội dung</label>
+                    <input type="text" class="form-control" name="noidung" id="field_noidung"
+                           formControlName="noidung"/>
+                    <div *ngIf="editForm.get('noidung').invalid && (editForm.get('noidung').dirty || editForm.get('noidung').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('noidung').errors.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_ketqua">Kết quả</label>
+                    <input type="text" class="form-control" name="ketqua" id="field_ketqua"
+                           formControlName="ketqua"/>
+                    <div *ngIf="editForm.get('ketqua').invalid && (editForm.get('ketqua').dirty || editForm.get('ketqua').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('ketqua').errors.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_dapan1">Đáp án 1</label>
+                    <input type="text" class="form-control" name="dapan1" id="field_dapan1"
+                           formControlName="dapan1"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_dapan2">Đáp án 2</label>
+                    <input type="text" class="form-control" name="dapan2" id="field_dapan2"
+                           formControlName="dapan2"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_dapan3">Đáp án 3</label>
+                    <input type="text" class="form-control" name="dapan3" id="field_dapan3"
+                           formControlName="dapan3"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_dapan4">Đáp án 4</label>
+                    <input type="text" class="form-control" name="dapan4" id="field_dapan4"
+                           formControlName="dapan4"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_dokho">Độ khó</label>
+                    <select class="form-control" id="field_dokho" name="dokho" formControlName="dokho">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="dokhoOption.id === editForm.get('dokho').value?.id ? editForm.get('dokho').value : dokhoOption" *ngFor="let dokhoOption of dokhos; trackBy: trackDokhoById">{{dokhoOption.dokho}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_loai">Loại câu hỏi</label>
+                    <select class="form-control" id="field_loai" name="loai" formControlName="loai">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="loaiOption.id === editForm.get('loai').value?.id ? editForm.get('loai').value : loaiOption" *ngFor="let loaiOption of loais; trackBy: trackLoaiById">{{loaiOption.tenloai}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

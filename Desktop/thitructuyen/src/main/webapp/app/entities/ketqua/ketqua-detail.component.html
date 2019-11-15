@@ -1,0 +1,31 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="ketqua">
+            <h2><span>Ketqua</span> {{ketqua.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Diemso</span></dt>
+                <dd>
+                    <span>{{ketqua.diemso}}</span>
+                </dd>
+                <dt><span>User</span></dt>
+                <dd>
+                    {{ketqua.user?.login}}
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button" *jhiHasAnyAuthority="'ROLE_ADMIN'"
+                    [routerLink]="['/ketqua', ketqua.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

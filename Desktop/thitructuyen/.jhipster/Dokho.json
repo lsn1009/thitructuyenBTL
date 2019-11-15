@@ -1,0 +1,29 @@
+{
+    "name": "Dokho",
+    "fields": [
+        {
+            "fieldName": "dokho",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "cauhoi",
+            "otherEntityRelationshipName": "dokho",
+            "relationshipName": "cauhoi"
+        }
+    ],
+    "changelogDate": "20191030151322",
+    "entityTableName": "dokho",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

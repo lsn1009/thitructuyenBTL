@@ -1,0 +1,39 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.thitructuyen"
+    },
+    "jhipsterVersion": "6.3.0",
+    "applicationType": "monolith",
+    "baseName": "thitructuyen",
+    "packageName": "com.thitructuyen",
+    "packageFolder": "com/thitructuyen",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "ehcache",
+    "enableHibernateCache": true,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "mysql",
+    "prodDatabaseType": "mysql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "MDNkYzcxZTM3M2EwMDBkNTYyZTMyOThiYzJhYTA1ZWRhYTMxZDQwZmE2MGY4OGQ4NDBjM2Y1Mzk0ODMzYjM1YWFlODE4NjhiYzFiYmIzOTk5YTBlMjRjMjQ1M2NmZjNiNGRiNjUwMTkzYzU0YjIxYzQxM2JiOTdlNDg2NWRjN2E=",
+    "embeddableLaunchScript": false,
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "clientFramework": "angularX",
+    "clientTheme": "none",
+    "clientThemeVariant": "",
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": false,
+    "blueprints": []
+  }
+}

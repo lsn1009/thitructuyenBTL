@@ -1,0 +1,29 @@
+{
+    "name": "Loai",
+    "fields": [
+        {
+            "fieldName": "tenloai",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "cauhoi",
+            "otherEntityRelationshipName": "loai",
+            "relationshipName": "cauhoi"
+        }
+    ],
+    "changelogDate": "20191030151321",
+    "entityTableName": "loai",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}
